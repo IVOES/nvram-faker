@@ -1,0 +1,71 @@
+contrib/inih/cpp/INIReader.h:25:9: style:inconclusive: Technically the member function 'INIReader::ParseError' can be const. [functionConst]
+    int ParseError();
+        ^
+contrib/inih/cpp/INIReader.cpp:16:16: note: Technically the member function 'INIReader::ParseError' can be const.
+int INIReader::ParseError()
+               ^
+contrib/inih/cpp/INIReader.h:25:9: note: Technically the member function 'INIReader::ParseError' can be const.
+    int ParseError();
+        ^
+contrib/inih/cpp/INIReader.h:21:5: style: Class 'INIReader' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+    INIReader(std::string filename);
+    ^
+contrib/inih/cpp/INIReader.cpp:61:25: style: C-style pointer casting [cstyleCast]
+    INIReader* reader = (INIReader*)user;
+                        ^
+contrib/inih/cpp/INIReader.cpp:21:30: performance: Function parameter 'section' should be passed by const reference. [passedByValue]
+string INIReader::Get(string section, string name, string default_value)
+                             ^
+contrib/inih/cpp/INIReader.cpp:21:46: performance: Function parameter 'name' should be passed by const reference. [passedByValue]
+string INIReader::Get(string section, string name, string default_value)
+                                             ^
+contrib/inih/cpp/INIReader.cpp:27:35: performance: Function parameter 'section' should be passed by const reference. [passedByValue]
+long INIReader::GetInteger(string section, string name, long default_value)
+                                  ^
+contrib/inih/cpp/INIReader.cpp:27:51: performance: Function parameter 'name' should be passed by const reference. [passedByValue]
+long INIReader::GetInteger(string section, string name, long default_value)
+                                                  ^
+contrib/inih/cpp/INIReader.cpp:37:35: performance: Function parameter 'section' should be passed by const reference. [passedByValue]
+bool INIReader::GetBoolean(string section, string name, bool default_value)
+                                  ^
+contrib/inih/cpp/INIReader.cpp:37:51: performance: Function parameter 'name' should be passed by const reference. [passedByValue]
+bool INIReader::GetBoolean(string section, string name, bool default_value)
+                                                  ^
+contrib/inih/cpp/INIReader.cpp:50:34: performance: Function parameter 'section' should be passed by const reference. [passedByValue]
+string INIReader::MakeKey(string section, string name)
+                                 ^
+contrib/inih/cpp/INIReader.cpp:50:50: performance: Function parameter 'name' should be passed by const reference. [passedByValue]
+string INIReader::MakeKey(string section, string name)
+                                                 ^
+contrib/inih/ini.c:128:35: style: Condition '*start!=';'' is always true [knownConditionTrueFalse]
+        else if (*start && *start != ';') {
+                                  ^
+contrib/inih/ini.c:104:20: note: Assuming condition '*start==';'' is false
+        if (*start == ';' || *start == '#') {
+                   ^
+contrib/inih/ini.c:128:35: note: Condition '*start!=';'' is always true
+        else if (*start && *start != ';') {
+                                  ^
+nvram-faker.c:43:17: style: Condition 'NULL==kv' is always false [knownConditionTrueFalse]
+        if(NULL == kv)
+                ^
+nvram-faker.c:31:13: note: Assuming that condition 'NULL==kv' is not redundant
+    if(NULL == kv)
+            ^
+nvram-faker.c:43:17: note: Condition 'NULL==kv' is always false
+        if(NULL == kv)
+                ^
+nvram-faker.c:46:13: error: Memory leak: new_kv [memleak]
+            return 0;
+            ^
+nvram-faker.c:20:9: style: The scope of the variable 'old_kv_len' can be reduced. [variableScope]
+    int old_kv_len;
+        ^
+nvram-faker.c:23:9: style: The scope of the variable 'i' can be reduced. [variableScope]
+    int i;
+        ^
+nvram-faker.c:107:0: style: The function 'nvram_get' is never used. [unusedFunction]
+
+^
+nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingInclude]
+
